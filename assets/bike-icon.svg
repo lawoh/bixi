@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fond circulaire -->
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#BC1E45" stroke-width="2"/>
+  
+  <!-- Vélo stylisé -->
+  <g fill="#BC1E45">
+    <!-- Roue avant -->
+    <circle cx="70" cy="60" r="15" fill="none" stroke="#BC1E45" stroke-width="4"/>
+    <!-- Roue arrière -->
+    <circle cx="30" cy="60" r="15" fill="none" stroke="#BC1E45" stroke-width="4"/>
+    
+    <!-- Cadre du vélo -->
+    <path d="
+      M30 60
+      L50 35
+      L70 35
+      L70 60
+      M50 35
+      L60 60
+      M50 35
+      L30 60
+      M45 47
+      L55 47
+    " fill="none" stroke="#BC1E45" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Guidon -->
+    <path d="M65 35 Q70 30 75 35" fill="none" stroke="#BC1E45" stroke-width="4"/>
+    
+    <!-- Selle -->
+    <path d="M45 35 Q50 30 55 35" fill="none" stroke="#BC1E45" stroke-width="4"/>
+  </g>
+</svg>
