@@ -206,18 +206,17 @@ def creer_carte(gdf_stations):
     carte = folium.Map(
         location=[45.5236, -73.5985],  # Centre de Montréal
         zoom_start=12,
-        tiles='cartodbpositron',
+        tiles='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
         attr='© CartoDB © OpenStreetMap contributors'
     )
     
     # Ajout des différents fonds de carte avec leurs attributions
     folium.TileLayer(
-        'cartodbdark_matter',
+        'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
         name='CartoDB Dark',
         attr='© CartoDB © OpenStreetMap contributors',
         control=True
     ).add_to(carte)
-    
     
     folium.TileLayer(
         'https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}.jpg',
@@ -225,9 +224,7 @@ def creer_carte(gdf_stations):
         attr='Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
         control=True
     ).add_to(carte)
-
-
-    # Fond de carte satellite
+    
     folium.TileLayer(
         'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
         name='Google Satellite',
@@ -235,15 +232,13 @@ def creer_carte(gdf_stations):
         control=True
     ).add_to(carte)
     
-
     folium.TileLayer(
-        'openstreetmap',
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         name='OpenStreetMap',
         attr='© OpenStreetMap contributors',
         control=True
     ).add_to(carte)
-
-
+    
     # Ajout de l'outil de mesure
     plugins.MeasureControl(
         position='topleft',
@@ -257,7 +252,7 @@ def creer_carte(gdf_stations):
     ).add_to(carte)
     
     # Création du groupe de marqueurs en cluster
-    marker_cluster = folium.plugins.MarkerCluster(
+    marker_cluster = plugins.MarkerCluster(
         name='Stations BIXI',
         overlay=True,
         control=True,
