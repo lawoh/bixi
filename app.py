@@ -206,7 +206,7 @@ def creer_carte(gdf_stations):
     carte = folium.Map(
         location=[45.5236, -73.5985],  # Centre de Montréal
         zoom_start=12,
-        tiles='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        tiles='cartodbpositron',
         attr='© CartoDB © OpenStreetMap contributors'
     )
     
