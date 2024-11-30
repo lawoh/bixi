@@ -219,13 +219,6 @@ def creer_carte(gdf_stations):
     ).add_to(carte)
     
     folium.TileLayer(
-        'https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}.jpg',
-        name='Stamen Terrain',
-        attr='Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
-        control=True
-    ).add_to(carte)
-    
-    folium.TileLayer(
         'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
         name='Google Satellite',
         attr='Google',
